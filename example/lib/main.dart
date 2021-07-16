@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Overlapped Avatars Demo'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -62,40 +63,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              height: 120,
-              child: GestureDetector(
-                onTap: () {
-                  changeState();
-                },
-                child: Flex(
-                  direction: Axis.horizontal,
-                  children: [
-                    AvatarList(
-                      leading: AvatarListLeading.tight,
-                      avatars: List.generate(4, (index) => index + 1)
-                          .map(generateAvatarListItem)
-                          .toList(),
-                    ),
-                    SizedBox(width: 60),
-                    Expanded(
-                      flex: 0,
-                      child: Container(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          '+40',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 40, fontWeight: FontWeight.bold),
+            FittedBox(
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                height: 120,
+                child: GestureDetector(
+                  onTap: () {
+                    changeState();
+                  },
+                  child: Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      AvatarList(
+                        leading: AvatarListLeading.tight,
+                        avatars: List.generate(4, (index) => index + 1)
+                            .map(generateAvatarListItem)
+                            .toList(),
+                      ),
+                      SizedBox(width: 60),
+                      Expanded(
+                        flex: 0,
+                        child: Container(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            '+40',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 40, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 setState(() {
@@ -114,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
@@ -168,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: 20),
           ],
         ),
       ),
