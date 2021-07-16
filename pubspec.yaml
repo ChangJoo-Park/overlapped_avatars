@@ -1,7 +1,8 @@
 name: overapped_avatars
 description: Overapped Avatars for Flutter
 version: 0.0.1
-homepage:
+homepage: https://github.com/ChangJoo-Park/overlapped_avatars
+repository: https://github.com/ChangJoo-Park/overlapped_avatars
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
